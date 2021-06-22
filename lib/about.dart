@@ -13,17 +13,44 @@ class About extends StatelessWidget {
 
     return Column(
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.only(bottom: 20),
+              child: IconButton(
+                icon: Icon(Icons.arrow_circle_up),
+                iconSize: 40,
+                color: Colors.deepOrangeAccent,
+                onPressed: () {
+                  scrollTo(0);
+                },
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(bottom: 20),
+              child: IconButton(
+                icon: Icon(Icons.arrow_circle_down),
+                iconSize: 40,
+                color: Colors.deepOrangeAccent,
+                onPressed: () {
+                  scrollToSection("work");
+                },
+              ),
+            )
+          ],
+        ),
         Container(
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius:
                   BorderRadius.only(bottomRight: Radius.circular(20.0))),
           margin: EdgeInsets.only(
-              top: 50,
-              bottom: 30,
+              top: 10,
+              bottom: 20,
               left: isScreenSmall ? 20 : 100,
               right: isScreenSmall ? 20 : 100),
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.all(20),
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <
                   Widget>[
@@ -34,7 +61,7 @@ class About extends StatelessWidget {
                     "about me",
                     style: TextStyle(
                         color: Colors.deepOrangeAccent,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         fontSize: 18),
                   )),
             Expanded(
@@ -47,22 +74,22 @@ class About extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         child: Text(
-                          "i am a relative newcomer to computing but i've found i like to code because it is a way of solving almost any problem. there is so much to learn - it is an incredible area to be working in today\n ",
+                          "i like to code because it is a way of solving almost any problem. there is so much to learn - it is an incredible area to be working in today\n ",
                           style: TextStyle(
                               color: Colors.green.shade700,
                               fontSize:
                                   isScreenSmall || isScreenMedium ? 14 : 20,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                       Container(
                         child: Text(
-                            "before getting into coding i worked for the ambulance service as a technician and then a paramedic. that job involved a lot of problem solving too. there is such broad scope for technology to help in that environment, i would love to use my new skills to contribute to the NHS one day\n",
+                            "before getting into coding i worked for the ambulance service as a technician and then a paramedic. that job involved a lot of problem solving too. i would love to use my new skills to contribute to the NHS one day\n",
                             style: TextStyle(
                                 color: Colors.green.shade700,
                                 fontSize:
                                     isScreenSmall || isScreenMedium ? 14 : 20,
-                                fontWeight: FontWeight.bold)),
+                                fontWeight: FontWeight.w600)),
                       ),
                       Container(
                         child: Text(
@@ -71,7 +98,7 @@ class About extends StatelessWidget {
                                 color: Colors.green.shade700,
                                 fontSize:
                                     isScreenSmall || isScreenMedium ? 14 : 20,
-                                fontWeight: FontWeight.bold)),
+                                fontWeight: FontWeight.w600)),
                       ),
                       Container(
                         child: Text(
@@ -80,7 +107,7 @@ class About extends StatelessWidget {
                                 color: Colors.green.shade700,
                                 fontSize:
                                     isScreenSmall || isScreenMedium ? 14 : 20,
-                                fontWeight: FontWeight.bold)),
+                                fontWeight: FontWeight.w600)),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
