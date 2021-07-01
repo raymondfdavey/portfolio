@@ -22,32 +22,32 @@ class _WorkState extends State<Work> {
     print(projects.info["MPS INTERESTS"]["title"]);
     return Column(
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: EdgeInsets.only(bottom: 20),
-              child: IconButton(
-                icon: Icon(Icons.arrow_circle_up),
-                iconSize: 40,
-                color: Colors.deepOrangeAccent,
-                onPressed: () {
-                  widget.scrollToSection('about me');
-                },
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: IconButton(
+                  icon: Icon(Icons.arrow_circle_up),
+                  iconSize: 40,
+                  color: Colors.deepOrangeAccent,
+                  onPressed: () {
+                    widget.scrollTo(0);
+                  },
+                ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.only(bottom: 20),
-              child: IconButton(
-                icon: Icon(Icons.arrow_circle_down),
-                iconSize: 40,
-                color: Colors.deepOrangeAccent,
-                onPressed: () {
-                  widget.scrollToSection("blog");
-                },
-              ),
-            )
-          ],
+              Container(
+                child: IconButton(
+                  icon: Icon(Icons.arrow_circle_down),
+                  iconSize: 40,
+                  color: Colors.deepOrangeAccent,
+                  onPressed: () {
+                    widget.scrollToSection("blog");
+                  },
+                ),
+              )
+            ],
+          ),
         ),
         WorkTile(
             backgroundColor: Colors.white,
@@ -73,6 +73,10 @@ class _WorkState extends State<Work> {
             backgroundColor: Colors.green.shade500,
             textColor: Colors.white,
             projectName: "FREE THE BEES!"),
+        WorkTile(
+            backgroundColor: Colors.white,
+            textColor: Colors.deepOrangeAccent,
+            projectName: "SHAME"),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -83,7 +87,7 @@ class _WorkState extends State<Work> {
                 iconSize: 40,
                 color: Colors.deepOrangeAccent,
                 onPressed: () {
-                  widget.scrollToSection('work');
+                  widget.scrollTo(0);
                 },
               ),
             ),

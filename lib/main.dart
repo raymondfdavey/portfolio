@@ -11,12 +11,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Ray Davey | Portfolio',
+        title: 'Ray Davey | Portfolio Site',
         theme: new ThemeData(
             scaffoldBackgroundColor: Colors.blue.shade700,
             fontFamily: 'Spartan'),
@@ -46,45 +45,16 @@ class _MyHomePageState extends State<MyHomePage> {
   List<String> pages = ["about me", "work", "blog", "contact"];
   int currentIndex = 0;
 
-  scrollUp() {
-    scrollToSection(pages[currentIndex]);
-    setState(() {
-      currentIndex = currentIndex;
-      selectedPage = pages[currentIndex];
-    });
-  }
-
-  scrollDown() {
-    scrollToSection(pages[currentIndex]);
-    setState(() {
-      currentIndex = currentIndex;
-      selectedPage = pages[currentIndex];
-    });
-  }
-
-  scrollToSection(page) {
-    setState(() {
-      selectedPage = page;
-      currentIndex = pages.indexOf(page);
-    });
-    final List<GlobalKey> keys = [
-      _keySeparator0,
-      _keySeparator1,
-      _keySeparator2,
-      _keySeparator3
-    ];
-
-    int indexToScrollTo = pages.indexOf(page);
-    GlobalKey correctSeparatorKey = keys[indexToScrollTo];
-    print("separatorKey");
-    print(correctSeparatorKey);
-    scrollToSeparator(correctSeparatorKey);
-  }
-
   @override
   void dispose() {
     controller.dispose(); // dispose the controller
     super.dispose();
+  }
+
+  void selectPage(page) {
+    setState(() {
+      selectedPage = page;
+    });
   }
 
   void scrollTo(double number) {
@@ -104,6 +74,21 @@ class _MyHomePageState extends State<MyHomePage> {
     final positionTop = renderBoxTop.localToGlobal(Offset.zero);
 
     scrollTo(positionSeparator.dy - positionTop.dy);
+  }
+
+  scrollToSection(page) {
+    final List<GlobalKey> keys = [
+      _keySeparator0,
+      _keySeparator1,
+      _keySeparator2,
+      _keySeparator3
+    ];
+
+    int indexToScrollTo = pages.indexOf(page);
+    GlobalKey correctSeparatorKey = keys[indexToScrollTo];
+    print("separatorKey");
+    print(correctSeparatorKey);
+    scrollToSeparator(correctSeparatorKey);
   }
 
 //400, 550
@@ -153,7 +138,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         border: Border(
                             top: BorderSide(width: 8, color: Colors.white))))
               ])),
-          Intro(selectedPage: selectedPage, scrollToSection: scrollToSection),
+          Intro(
+            selectedPage: selectedPage,
+            scrollToSection: scrollToSection,
+            selectPage: selectPage,
+          ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.only(
@@ -173,15 +162,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 About(
                   scrollToSection: scrollToSection,
                   scrollTo: scrollTo,
-                  scrollDown: scrollDown,
+                  // scrollDown: scrollDown,
                 ),
                 Separator(key: _keySeparator1),
                 Work(
+                  scrollTo: scrollTo,
                   scrollToSection: scrollToSection,
-                  scrollDown: scrollDown,
+                  // scrollDown: scrollDown,
                 ),
                 Separator(key: _keySeparator2),
                 Blog(
+                  scrollTo: scrollTo,
+
                   scrollToSection: scrollToSection,
 
                   // scrollDown: scrollDown,

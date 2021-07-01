@@ -122,7 +122,7 @@ class Blog extends StatelessWidget {
                 iconSize: 40,
                 color: Colors.deepOrangeAccent,
                 onPressed: () {
-                  scrollToSection('work');
+                  scrollTo(0);
                 },
               ),
             ),

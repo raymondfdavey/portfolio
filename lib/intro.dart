@@ -23,6 +23,10 @@ class _IntroState extends State<Intro> {
     return Container(
         margin: EdgeInsets.only(
             right: isScreenSmall ? 0 : 60, left: isScreenSmall ? 0 : 60),
+        padding: EdgeInsets.only(
+          top: 10,
+          bottom: 10,
+        ),
         decoration: BoxDecoration(
           border: Border(
               bottom: BorderSide(
@@ -226,14 +230,15 @@ class _IntroState extends State<Intro> {
                                               color: widget.selectedPage ==
                                                       "about me"
                                                   ? Colors.deepOrangeAccent
-                                                  : Colors.white),
+                                                  : Colors.white,
+                                              width: 4),
                                           backgroundColor: Colors.white,
                                           textStyle: const TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         onPressed: () {
-                                          // widget.selectPage("about me");
+                                          widget.selectPage("about me");
                                           widget.scrollToSection("about me");
                                         },
                                         child: const Text('about me')),
@@ -255,14 +260,15 @@ class _IntroState extends State<Intro> {
                                               color:
                                                   widget.selectedPage == "work"
                                                       ? Colors.deepOrangeAccent
-                                                      : Colors.white),
+                                                      : Colors.white,
+                                              width: 4),
                                           backgroundColor: Colors.white,
                                           textStyle: const TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         onPressed: () {
-                                          // widget.selectPage("work");
+                                          widget.selectPage("work");
                                           widget.scrollToSection("work");
                                         },
                                         child: const Text('work')),
@@ -288,7 +294,8 @@ class _IntroState extends State<Intro> {
                                               color:
                                                   widget.selectedPage == "blog"
                                                       ? Colors.deepOrangeAccent
-                                                      : Colors.white),
+                                                      : Colors.white,
+                                              width: 4),
                                           backgroundColor: Colors.white,
                                           textStyle: const TextStyle(
                                               fontSize: 20,
@@ -297,7 +304,7 @@ class _IntroState extends State<Intro> {
                                         onPressed: () {
                                           widget.scrollToSection("blog");
 
-                                          // widget.selectPage("blog");
+                                          widget.selectPage("blog");
                                         },
                                         child: const Text('blog')),
                                   ),
@@ -318,14 +325,15 @@ class _IntroState extends State<Intro> {
                                               color: widget.selectedPage ==
                                                       "contact"
                                                   ? Colors.deepOrangeAccent
-                                                  : Colors.white),
+                                                  : Colors.white,
+                                              width: 4),
                                           backgroundColor: Colors.white,
                                           textStyle: const TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         onPressed: () {
-                                          // widget.selectPage("contact");
+                                          widget.selectPage("contact");
                                           widget.scrollToSection("contact");
                                         },
                                         child: const Text('contact')),
@@ -354,14 +362,15 @@ class _IntroState extends State<Intro> {
                                           color:
                                               widget.selectedPage == "about me"
                                                   ? Colors.deepOrangeAccent
-                                                  : Colors.white),
+                                                  : Colors.white,
+                                          width: 4),
                                       backgroundColor: Colors.white,
                                       textStyle: const TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     onPressed: () {
-                                      // widget.selectPage("about me");
+                                      widget.selectPage("about me");
                                       widget.scrollToSection("about me");
                                     },
                                     child: const Text('about me')),
@@ -381,14 +390,15 @@ class _IntroState extends State<Intro> {
                                       side: BorderSide(
                                           color: widget.selectedPage == "work"
                                               ? Colors.deepOrangeAccent
-                                              : Colors.white),
+                                              : Colors.white,
+                                          width: 4),
                                       backgroundColor: Colors.white,
                                       textStyle: const TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     onPressed: () {
-                                      // widget.selectPage("work");
+                                      widget.selectPage("work");
                                       widget.scrollToSection("work");
                                     },
                                     child: const Text('work')),
@@ -408,7 +418,8 @@ class _IntroState extends State<Intro> {
                                       side: BorderSide(
                                           color: widget.selectedPage == "blog"
                                               ? Colors.deepOrangeAccent
-                                              : Colors.white),
+                                              : Colors.white,
+                                          width: 4),
                                       backgroundColor: Colors.white,
                                       textStyle: const TextStyle(
                                           fontSize: 20,
@@ -417,7 +428,7 @@ class _IntroState extends State<Intro> {
                                     onPressed: () {
                                       widget.scrollToSection("blog");
 
-                                      // widget.selectPage("blog");
+                                      widget.selectPage("blog");
                                     },
                                     child: const Text('blog')),
                               ),
@@ -434,14 +445,15 @@ class _IntroState extends State<Intro> {
                                     side: BorderSide(
                                         color: widget.selectedPage == "contact"
                                             ? Colors.deepOrangeAccent
-                                            : Colors.white),
+                                            : Colors.white,
+                                        width: 4),
                                     backgroundColor: Colors.white,
                                     textStyle: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   onPressed: () {
-                                    // widget.selectPage("contact");
+                                    widget.selectPage("contact");
                                     widget.scrollToSection("contact");
                                   },
                                   child: const Text('contact')),

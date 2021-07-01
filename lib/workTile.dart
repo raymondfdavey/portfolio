@@ -57,13 +57,14 @@ class _WorkTileState extends State<WorkTile> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Container(
+                    // width: 350,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                            height: 150,
-                            width: 150,
-                            margin: EdgeInsets.all(20),
+                            height: 140,
+                            width: 140,
+                            margin: EdgeInsets.all(18),
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: AssetImage('/images/commons.jpg'),
@@ -75,87 +76,99 @@ class _WorkTileState extends State<WorkTile> {
                                 border: Border(
                                     left: BorderSide(
                                         color: widget.textColor, width: 0.5))),
-                            padding: EdgeInsets.only(right: 12, left: 20),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text(
-                                  widget.projectName,
-                                  style: TextStyle(
-                                      color: widget.textColor,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: isScreenSmall ? 15 : 18),
+                                Container(
+                                  width: 130,
+                                  padding: EdgeInsets.only(
+                                      bottom: 15, left: 10, right: 10),
+                                  child: Text(
+                                    widget.projectName,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: widget.textColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
                                 ),
                                 Container(
-                                    padding: EdgeInsets.only(top: 20),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.only(right: 12),
-                                          child: RichText(
-                                            text: TextSpan(children: [
-                                              TextSpan(
-                                                  style: TextStyle(
-                                                      color:
-                                                          Colors.blue.shade700,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  text: "GitHub",
-                                                  recognizer:
-                                                      TapGestureRecognizer()
-                                                        ..onTap = () async {
-                                                          var url =
-                                                              "https://github.com/raymondfdavey/reg-interests-flutter-via-node";
-                                                          if (await canLaunch(
-                                                              url)) {
-                                                            await launch(url);
-                                                          } else {
-                                                            throw 'Could not launch $url';
-                                                          }
-                                                        }),
-                                            ]),
-                                          ),
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      padding:
+                                          EdgeInsets.only(left: 8, right: 8),
+                                      child: RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                              style: TextStyle(
+                                                  color: Colors.blue.shade700,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                              text: "GitHub",
+                                              recognizer: TapGestureRecognizer()
+                                                ..onTap = () async {
+                                                  var url = projects.info[widget
+                                                                  .projectName]
+                                                              ["github"] !=
+                                                          null
+                                                      ? projects.info[widget
+                                                              .projectName]
+                                                          ["github"]
+                                                      : "WWW.GOOGLE.COM";
+                                                  if (await canLaunch(url)) {
+                                                    await launch(url);
+                                                  } else {
+                                                    throw 'Could not launch $url';
+                                                  }
+                                                }),
+                                        ]),
+                                      ),
 
-                                          // Text("GitHub",
-                                          //     style: TextStyle(
-                                          //         color: Colors.deepOrangeAccent,
-                                          //         fontSize: 15))
-                                        ),
-                                        Container(
-                                          child: RichText(
-                                            text: TextSpan(children: [
-                                              TextSpan(
-                                                  style: TextStyle(
-                                                      color:
-                                                          Colors.blue.shade700,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  text: "LIVE",
-                                                  recognizer:
-                                                      TapGestureRecognizer()
-                                                        ..onTap = () async {
-                                                          var url =
-                                                              "https://registeredinterests.azurewebsites.net/#/";
-                                                          if (await canLaunch(
-                                                              url)) {
-                                                            await launch(url);
-                                                          } else {
-                                                            throw 'Could not launch $url';
-                                                          }
-                                                        }),
-                                            ]),
-                                          ),
+                                      // Text("GitHub",
+                                      //     style: TextStyle(
+                                      //         color: Colors.deepOrangeAccent,
+                                      //         fontSize: 15))
+                                    ),
+                                    Container(
+                                      padding:
+                                          EdgeInsets.only(left: 8, right: 8),
 
-                                          // Text("GitHub",
-                                          //     style: TextStyle(
-                                          //         color: Colors.deepOrangeAccent,
-                                          //         fontSize: 15))
-                                        ),
-                                      ],
-                                    ))
+                                      child: RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                              style: TextStyle(
+                                                  color: Colors.blue.shade700,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                              text: "LIVE",
+                                              recognizer: TapGestureRecognizer()
+                                                ..onTap = () async {
+                                                  var url = projects.info[widget
+                                                                  .projectName]
+                                                              ["live"] !=
+                                                          null
+                                                      ? projects.info[widget
+                                                          .projectName]["live"]
+                                                      : "WWW.GOOGLE.COM";
+                                                  if (await canLaunch(url)) {
+                                                    await launch(url);
+                                                  } else {
+                                                    throw 'Could not launch $url';
+                                                  }
+                                                }),
+                                        ]),
+                                      ),
+
+                                      // Text("GitHub",
+                                      //     style: TextStyle(
+                                      //         color: Colors.deepOrangeAccent,
+                                      //         fontSize: 15))
+                                    ),
+                                  ],
+                                ))
                               ],
                             )),
                       ],
@@ -165,7 +178,7 @@ class _WorkTileState extends State<WorkTile> {
                     fit: FlexFit.loose,
                     child: Container(
                         padding: EdgeInsets.only(
-                            left: 20, right: 20, bottom: 20, top: 20),
+                            left: 20, right: 20, bottom: 10, top: 10),
                         decoration: isScreenSmall
                             ? BoxDecoration(
                                 border: Border(
@@ -188,8 +201,13 @@ class _WorkTileState extends State<WorkTile> {
                             },
                             title: Text(
                               projects.info[widget.projectName]["title"],
+                              textAlign: isScreenSmall
+                                  ? TextAlign.center
+                                  : TextAlign.left,
                               style: TextStyle(
-                                  color: widget.textColor, fontSize: 20),
+                                  color: widget.textColor,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500),
                             ),
                           ),
                         )

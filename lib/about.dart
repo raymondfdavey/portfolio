@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 
 class About extends StatelessWidget {
-  const About({Key? key, this.scrollTo, this.scrollDown, this.scrollToSection})
+  About({Key? key, this.scrollTo, this.scrollDown, this.scrollToSection})
       : super(key: key);
   final scrollDown;
   final scrollTo;
   final scrollToSection;
+  final GlobalKey arrowButtonKey = GlobalKey();
+
+  bool isWholeSectionVisible() {
+    final RenderBox renderBoxRed =
+        arrowButtonKey.currentContext!.findRenderObject() as RenderBox;
+    final positionArrow = renderBoxRed.localToGlobal(Offset.zero);
+    print("POSITION of Red: ${positionArrow.dy} ");
+    if (positionArrow.dy < 65) {
+      return true;
+    } else
+      return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     bool isScreenMedium = MediaQuery.of(context).size.width < 1300;
@@ -28,13 +41,19 @@ class About extends StatelessWidget {
               ),
             ),
             Container(
+              key: arrowButtonKey,
               padding: EdgeInsets.only(bottom: 20),
               child: IconButton(
                 icon: Icon(Icons.arrow_circle_down),
                 iconSize: 40,
                 color: Colors.deepOrangeAccent,
                 onPressed: () {
-                  scrollToSection("work");
+                  if (isWholeSectionVisible()) {
+                    scrollToSection("work");
+                  } else {
+                    scrollToSection("about me");
+                  }
+                  // scrollToSection("about me");
                 },
               ),
             )
