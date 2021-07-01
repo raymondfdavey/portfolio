@@ -22,6 +22,8 @@ final Map info = {
         " This was a week long programming assignment on the full-stack developers bootcamp I did (Northcoders, Manchester). The data for seeding the database came as part of the assignment. Includes testing with mocha and chai for front and back end",
     "links": "some links",
     "hosted": "heroku",
+    "github": "https://github.com/raymondfdavey/NC-news",
+    "live": "https://raymondfdavey.github.io/NC-news/",
     "includes":
         "testing, API construction including paginated rrsults, react-based front end"
   },
