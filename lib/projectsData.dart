@@ -1,7 +1,7 @@
 final Map info = {
   "MPS INTERESTS": {
     "title": "Full stack web app for finding MP's registered interests by name",
-    "imagePath": '/images/sites/mps.png',
+    "imagePath": '/images/mps.png',
     "about":
         "This solo project came about after playing around on the parliamentary API for a mobile app I am currently working on. I noticed that the API did not return any results for MP's registered interests, and that the information was very hard to access systematically on their website. This site is an effort to fill that gap.",
     "links": {
@@ -20,7 +20,7 @@ final Map info = {
         "data processing, web scraping, data processing, creating and seeding database (mongo), API contruction, web-app, adaptable for mobile viewing, works as a mobile app (thanks to flutter), hosting and deployment, using environment variables"
   },
   "NC NEWS": {
-    "imagePath": '/images/sites/ncnews.png',
+    "imagePath": '/images/ncnews.png',
     "title":
         "Full stack reddit-style news site displaying articles, votes, and comments",
     "stack": "SQL, node.js, react.js",
@@ -37,7 +37,7 @@ final Map info = {
         "testing, API construction including paginated rrsults, react-based front end"
   },
   "YRGLSET": {
-    "imagePath": '/images/sites/yrglset.png',
+    "imagePath": '/images/yrglset.png',
     "title":
         "Full stack yearly-goal-setter web app with log-in and authentication",
     "stack": "SQL, node.js, react.js",
@@ -52,7 +52,7 @@ final Map info = {
     "live": "https://raymondfdavey.github.io/yrglset/",
   },
   "WHO'S WHERE": {
-    "imagePath": '/images/sites/whoswhere.png',
+    "imagePath": '/images/whoswhere.png',
     "title": "Front-end for a student admininstation system",
     "stack": "react.js",
     "about":
@@ -65,7 +65,7 @@ final Map info = {
     "live": "https://raymondfdavey.github.io/whoswhere/",
   },
   "QUAKE DATA": {
-    "imagePath": '/images/sites/dataquake.png',
+    "imagePath": '/images/dataquake.png',
     "title": "Full stack web app for finding MP's registered interests by name",
     "stack": "react.js",
     "about":
@@ -78,7 +78,7 @@ final Map info = {
     "live": "https://raymondfdavey.github.io/quaker/",
   },
   "FREE THE BEES!": {
-    "imagePath": '/images/sites/bees.png',
+    "imagePath": '/images/bees.png',
     "title": "nonsensical. volume ON",
     "stack": "react.js",
     "about":
@@ -91,7 +91,7 @@ final Map info = {
     "live": "https://raymondfdavey.github.io/bees-in-space/"
   },
   "SHAME": {
-    "imagePath": '/images/sites/shame.png',
+    "imagePath": '/images/shame.png',
     "title": "Website for a friends band (work in progress)",
     "stack": "flutter",
     "about":

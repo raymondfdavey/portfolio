@@ -58,13 +58,13 @@ flutter:
     - assets/images/thought.png
     - assets/images/commons.jpg
     - assets/images/square.jpeg
-    - assets/images/sites/bees.png
-    - assets/images/sites/dataquake.png
-    - assets/images/sites/mps.png
-    - assets/images/sites/ncnews.png
-    - assets/images/sites/shame.png
-    - assets/images/sites/whoswhere.png
-    - assets/images/sites/yrglset.png
+    - assets/images/bees.png
+    - assets/images/dataquake.png
+    - assets/images/mps.png
+    - assets/images/ncnews.png
+    - assets/images/shame.png
+    - assets/images/whoswhere.png
+    - assets/images/yrglset.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
