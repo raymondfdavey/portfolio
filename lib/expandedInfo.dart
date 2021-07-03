@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import "projectsData.dart" as projects;
 
 class ExpandedInfo extends StatefulWidget {
-  const ExpandedInfo({Key? key, required this.project, required this.textColor})
+  const ExpandedInfo(
+      {Key? key,
+      required this.project,
+      required this.links,
+      required this.textColor})
       : super(key: key);
   final String project;
   final Color textColor;
+  final List<Widget> links;
   @override
   _ExpandedInfoState createState() => _ExpandedInfoState();
 }
@@ -113,7 +118,7 @@ class _ExpandedInfoState extends State<ExpandedInfo> {
                   Container(
                     width: 90,
                     child: Text(
-                      "links:",
+                      "github:",
                       style: TextStyle(
                           color: widget.textColor,
                           fontSize: 16,
@@ -123,11 +128,10 @@ class _ExpandedInfoState extends State<ExpandedInfo> {
                   ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Text(
-                        projects.info[projectString]["links"],
-                        style: TextStyle(color: widget.textColor, fontSize: 16),
-                      ),
+                      // padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: widget.links),
                     ),
                   )
                 ],

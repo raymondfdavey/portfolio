@@ -182,6 +182,43 @@ class About extends StatelessWidget {
             )
           ]),
         ),
+        // Container(
+        //   decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius:
+        //           BorderRadius.only(bottomRight: Radius.circular(20.0))),
+        //   margin: EdgeInsets.only(
+        //       top: 10,
+        //       bottom: 20,
+        //       left: isScreenSmall ? 20 : 100,
+        //       right: isScreenSmall ? 20 : 100),
+        //   padding: EdgeInsets.all(20),
+        //   child: Row(
+        //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //       children: <Widget>[
+        //         if (isScreenSmall == false)
+        //           Container(
+        //               padding: EdgeInsets.only(right: 20),
+        //               child: Text(
+        //                 "MY STACK",
+        //                 style: TextStyle(
+        //                     color: Colors.deepOrangeAccent,
+        //                     fontWeight: FontWeight.w600,
+        //                     fontSize: 18),
+        //               )),
+        //         Expanded(
+        //           child: Container(
+        //               padding: EdgeInsets.only(left: 20),
+        //               decoration: BoxDecoration(
+        //                   border: Border(
+        //                       left:
+        //                           BorderSide(color: Colors.black, width: 0.5))),
+        //               child: Column(
+        //                 children: <Widget>[Text("STACK")],
+        //               )),
+        //         )
+        //       ]),
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -208,7 +245,7 @@ class About extends StatelessWidget {
               ),
             )
           ],
-        )
+        ),
       ],
     );
   }

@@ -21,6 +21,45 @@ class WorkTile extends StatefulWidget {
 
 class _WorkTileState extends State<WorkTile> {
   bool isExpanded = false;
+  List<Widget> links = [];
+  List<Widget> getLinks(Map passedLinksObject) {
+    List<Widget> newLinks = [];
+
+    passedLinksObject.forEach((key, value) {
+      newLinks.add(
+        Container(
+          padding: EdgeInsets.only(left: 8, right: 8),
+
+          child: RichText(
+            text: TextSpan(children: [
+              TextSpan(
+                  style: TextStyle(
+                      color: Colors.blue.shade700,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                  text: key,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () async {
+                      var url = value;
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    }),
+            ]),
+          ),
+
+          // Text("GitHub",
+          //     style: TextStyle(
+          //         color: Colors.deepOrangeAccent,
+          //         fontSize: 15))
+        ),
+      );
+    });
+    return newLinks;
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).copyWith(dividerColor: Colors.transparent);
@@ -67,7 +106,8 @@ class _WorkTileState extends State<WorkTile> {
                             margin: EdgeInsets.all(18),
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage('/images/commons.jpg'),
+                                    image: AssetImage(projects
+                                        .info[widget.projectName]["imagePath"]),
                                     fit: BoxFit.fill),
                                 borderRadius: BorderRadius.only(
                                     bottomRight: Radius.circular(20)))),
@@ -97,9 +137,45 @@ class _WorkTileState extends State<WorkTile> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
+                                    // Container(
+                                    //   padding:
+                                    //       EdgeInsets.only(left: 8, right: 8),
+                                    //   child: RichText(
+                                    //     text: TextSpan(children: [
+                                    //       TextSpan(
+                                    //           style: TextStyle(
+                                    //               color: Colors.blue.shade700,
+                                    //               fontSize: 15,
+                                    //               fontWeight: FontWeight.bold),
+                                    //           text: "GitHub",
+                                    //           recognizer: TapGestureRecognizer()
+                                    //             ..onTap = () async {
+                                    //               var url = projects.info[widget
+                                    //                               .projectName]
+                                    //                           ["github"] !=
+                                    //                       null
+                                    //                   ? projects.info[widget
+                                    //                           .projectName]
+                                    //                       ["github"]
+                                    //                   : "WWW.GOOGLE.COM";
+                                    //               if (await canLaunch(url)) {
+                                    //                 await launch(url);
+                                    //               } else {
+                                    //                 throw 'Could not launch $url';
+                                    //               }
+                                    //             }),
+                                    //     ]),
+                                    //   ),
+
+                                    //   // Text("GitHub",
+                                    //   //     style: TextStyle(
+                                    //   //         color: Colors.deepOrangeAccent,
+                                    //   //         fontSize: 15))
+                                    // ),
                                     Container(
                                       padding:
                                           EdgeInsets.only(left: 8, right: 8),
+
                                       child: RichText(
                                         text: TextSpan(children: [
                                           TextSpan(
@@ -107,43 +183,7 @@ class _WorkTileState extends State<WorkTile> {
                                                   color: Colors.blue.shade700,
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.bold),
-                                              text: "GitHub",
-                                              recognizer: TapGestureRecognizer()
-                                                ..onTap = () async {
-                                                  var url = projects.info[widget
-                                                                  .projectName]
-                                                              ["github"] !=
-                                                          null
-                                                      ? projects.info[widget
-                                                              .projectName]
-                                                          ["github"]
-                                                      : "WWW.GOOGLE.COM";
-                                                  if (await canLaunch(url)) {
-                                                    await launch(url);
-                                                  } else {
-                                                    throw 'Could not launch $url';
-                                                  }
-                                                }),
-                                        ]),
-                                      ),
-
-                                      // Text("GitHub",
-                                      //     style: TextStyle(
-                                      //         color: Colors.deepOrangeAccent,
-                                      //         fontSize: 15))
-                                    ),
-                                    Container(
-                                      padding:
-                                          EdgeInsets.only(left: 8, right: 8),
-
-                                      child: RichText(
-                                        text: TextSpan(children: [
-                                          TextSpan(
-                                              style: TextStyle(
-                                                  color: Colors.blue.shade700,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.bold),
-                                              text: "LIVE",
+                                              text: "LIVE SITE",
                                               recognizer: TapGestureRecognizer()
                                                 ..onTap = () async {
                                                   var url = projects.info[widget
@@ -194,9 +234,13 @@ class _WorkTileState extends State<WorkTile> {
                           child: ExpansionTile(
                             onExpansionChanged: (onExpansionChanged) {
                               print("CHANGING EXPANSESION");
+                              getLinks(
+                                  projects.info[widget.projectName]["links"]);
 
                               setState(() {
                                 isExpanded = !isExpanded;
+                                links = getLinks(
+                                    projects.info[widget.projectName]["links"]);
                               });
                             },
                             title: Text(
@@ -224,7 +268,9 @@ class _WorkTileState extends State<WorkTile> {
           ),
           if (isExpanded == true)
             ExpandedInfo(
-                project: widget.projectName, textColor: widget.textColor),
+                project: widget.projectName,
+                textColor: widget.textColor,
+                links: links),
         ],
       ),
     );
