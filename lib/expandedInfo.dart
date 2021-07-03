@@ -33,12 +33,11 @@ class _ExpandedInfoState extends State<ExpandedInfo> {
           Container(
               padding: EdgeInsets.only(bottom: 10),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: 90,
                     child: Text(
-                      "stack:",
+                      "github:",
                       style: TextStyle(
                           color: widget.textColor,
                           fontSize: 16,
@@ -48,11 +47,10 @@ class _ExpandedInfoState extends State<ExpandedInfo> {
                   ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Text(
-                        projects.info[projectString]["stack"],
-                        style: TextStyle(color: widget.textColor, fontSize: 16),
-                      ),
+                      // padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: widget.links),
                     ),
                   )
                 ],
@@ -107,31 +105,6 @@ class _ExpandedInfoState extends State<ExpandedInfo> {
                         projects.info[projectString]["about"],
                         style: TextStyle(color: widget.textColor, fontSize: 16),
                       ),
-                    ),
-                  )
-                ],
-              )),
-          Container(
-              padding: EdgeInsets.only(bottom: 10),
-              child: Row(
-                children: [
-                  Container(
-                    width: 90,
-                    child: Text(
-                      "github:",
-                      style: TextStyle(
-                          color: widget.textColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.right,
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      // padding: EdgeInsets.only(left: 10),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: widget.links),
                     ),
                   )
                 ],
