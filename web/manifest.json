@@ -1,7 +1,7 @@
 {
     "name": "portfolio_site",
     "short_name": "portfolio_site",
-    "start_url": ".",
+    "start_url": "portfolio_site",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
