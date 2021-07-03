@@ -51743,7 +51743,7 @@ q.toString
 p=t.p
 o=H.a([],p)
 n=!a3
-if(n)o.push(M.a1(d,d,d,new S.b5(d,X.pP(C.bq,new L.fv("assets/images/person.jpg")),d,new K.b3(C.l,C.l,C.l,new P.aJ(70,70)),d,d,C.p),550,d,d,d,400))
+if(n)o.push(M.a1(d,d,d,new S.b5(d,X.pP(C.bq,new L.fv("images/person.jpg")),d,new K.b3(C.l,C.l,C.l,new P.aJ(70,70)),d,d,C.p),550,d,d,d,400))
 m=n?20:0
 n=n?20:0
 l=M.a1(d,L.cG("Hi,",A.be(d,d,C.i,d,d,d,d,d,c,d,d,35,d,C.D,d,d,!0,d,d,d,d,d,d,d),d),C.r,d,d,d,C.nc,C.bf,d)
