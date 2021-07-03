@@ -44,7 +44,7 @@ class _IntroState extends State<Intro> {
                     borderRadius:
                         BorderRadius.only(bottomRight: Radius.circular(70)),
                     image: DecorationImage(
-                        image: AssetImage('assets/images/person.jpg'),
+                        image: AssetImage('images/person.jpg'),
                         fit: BoxFit.fill))),
           //! THIS IS THE WHOLE CONTAINER
           Container(
