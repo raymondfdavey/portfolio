@@ -121,7 +121,7 @@ class About extends StatelessWidget {
                       ),
                       Container(
                         child: Text(
-                            "most especially i am interested in how information is represented in systems - particularly the brain. my background is in philosophy so it is cool to be learning to work with huge amounts of data, and to be learning and thinking about different deep-learning models. it is such a mind-blowing area, and one i think will shed light on some of the questions that have bothered all us philosphizers since people first started asking them",
+                            "most especially i am interested in how information is represented in systems - particularly the brain. my background is in philosophy so it is cool to be learning to work with huge amounts of data, and to be learning and thinking about different deep-learning models",
                             style: TextStyle(
                                 color: Colors.green.shade700,
                                 fontSize:

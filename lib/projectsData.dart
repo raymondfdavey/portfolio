@@ -79,10 +79,10 @@ final Map info = {
   },
   "FREE THE BEES!": {
     "imagePath": 'images/bees.png',
-    "title": "nonsensical. volume ON",
+    "title": "Just for fun and experimentation. Audio is crucial for this site",
     "stack": "react.js",
     "about":
-        "began as a way just to play around with a few things in react. Ended up as my favourite site i've made thus far. Inspired by the wonderful novel 'The Bees' by Laline Paull ",
+        "began as a way just to play around with a few things in react. Inspired by the wonderful novel 'The Bees' by Laline Paull ",
     "links": {
       "frontend (js/react)": "https://github.com/raymondfdavey/bees-in-space"
     },
