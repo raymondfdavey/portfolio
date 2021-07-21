@@ -401,7 +401,7 @@ class _IntroState extends State<Intro> {
                                       widget.selectPage("work");
                                       widget.scrollToSection("work");
                                     },
-                                    child: const Text('work')),
+                                    child: const Text('projects')),
                               ),
                             ),
                             Container(
