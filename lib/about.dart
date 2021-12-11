@@ -112,22 +112,22 @@ class About extends StatelessWidget {
                       ),
                       Container(
                         child: Text(
-                            "i also have a long-term interest in human, animal and machine intelligence: what it is and how it works\n",
+                            "i also have a long-term interest in human, animal and machine intelligence: what it is and how it works. most especially i am interested in how information is represented in systems - particularly the brain\n",
                             style: TextStyle(
                                 color: Colors.green.shade700,
                                 fontSize:
                                     isScreenSmall || isScreenMedium ? 14 : 20,
                                 fontWeight: FontWeight.w600)),
                       ),
-                      Container(
-                        child: Text(
-                            "most especially i am interested in how information is represented in systems - particularly the brain. my background is in philosophy so it is cool to be learning to work with huge amounts of data, and to be learning and thinking about different deep-learning models",
-                            style: TextStyle(
-                                color: Colors.green.shade700,
-                                fontSize:
-                                    isScreenSmall || isScreenMedium ? 14 : 20,
-                                fontWeight: FontWeight.w600)),
-                      ),
+                      // Container(
+                      //   child: Text(
+                      //       "most especially i am interested in how information is represented in systems - particularly the brain",
+                      //       style: TextStyle(
+                      //           color: Colors.green.shade700,
+                      //           fontSize:
+                      //               isScreenSmall || isScreenMedium ? 14 : 20,
+                      //           fontWeight: FontWeight.w600)),
+                      // ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
